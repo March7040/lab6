@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css2.css">
+    <title>Widgets</title>
+</head>
+<body>
+
+    <div class="widget">
+        <h1>YouTube Video</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7LzXH6mHZ0U?si=E0JJqlgFh51a0AcD" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div>
+        <h1>Погода</h1>
+        <a class="weatherwidget-io" href="https://forecast7.com/uk/49d8424d03/lviv/" data-label_1="LVIV" data-label_2="WEATHER" data-theme="fall-leaves" >LVIV WEATHER</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+    </div>
+        
+    <h1>Час</h1>
+    <div id="clock">
+            
+        <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+              
+            const clockDisplay = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').innerText = clockDisplay;
+        }
+            
+        function updateClockEverySecond() {
+            updateClock();
+            setInterval(updateClock, 1000);
+        }
+    
+        updateClockEverySecond();</script>
+               
+    </div>
+    <h1>Аудіо</h1>
+    <audio controls >
+        <img src="img/girl-in-red-we-fell-in-love-in-october-forget-her.jpg" alt="iframe" srcset="img">
+        <source src="music/Girl In Red We Fell In Love In October.mp3" type="audio/mpeg">
+    </audio>
+
+    <p><a href="index.html">Минула сторінка</a></p>
+</body>
+</html>
